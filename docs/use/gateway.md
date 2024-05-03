@@ -32,7 +32,7 @@ If you want the settings to be kept upon gateway restart, you can save the state
 `mosquitto_pub -t "home/OpenMQTTGateway/commands/MQTTtoSYS/config" -m '{"disc":false, "save":true}'`
 
 ::: tip
-Auto discovery is enabled by default on release binaries and platformio (except for UNO). With Arduino IDE, please read the [advanced configuration section](../upload/advanced-configuration#auto-discovery) of the documentation.
+Auto discovery is enabled by default on release binaries and platformio.
 :::
 
 ## AutoDiscovery compatible with OpenHAB (default: false)
@@ -76,10 +76,6 @@ mosquitto_pub -t "home/OpenMQTTGateway/commands/MQTTtoSYS/config" -m
 By default this function is not available on the pre built binary of RFBridge, in order to have less code size and enable to have OTA update working properly. So as to enable it remove from the rf bridge env:
 ```
 build_flags = '-UMQTTsetMQTT'
-``` 
-Arduino boards does not have this function per default also, to add it:
-```
-build_flags = '-DMQTTsetMQTT'
 ``` 
 :::
 
